@@ -1,6 +1,6 @@
 import React from 'react'
-import {Route, Switch} from 'react-router-dom'
 import './App.css';
+import { Link, Route} from 'react-router-dom';
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer';
 import Home from './pages/home/Home';
@@ -11,25 +11,19 @@ import Songs from './components/song/Songs';
 import Favoritos from './pages/favoritos/Favoritos';
 import verMas from './pages/verMas/verMas';
 
+
 function App() {
   return (
-    <>
-       <Header titulo="Deezer" subtitulo="Musica"/>        
-        {/* <Container /> */}
-        <Switch>
-          <Route path="/" exact  >
-            <Home />
-          </Route>
-          <Route path="/Detalle" component={Detalle} />
-          <Route path="/Album" component={Album} />
-          <Route path="/Song" component={Songs}/>
-          <Route path="/Favoritos" component={Favoritos} />
-          <Route path="/verMas" component={verMas} />
-          <Route component={NotFound}/>
-        </Switch>
-      <Footer /> 
-    </>
-    );  
+    <div>
+      <Route path="/" component={Home}/> 
+      <Route path="/detalle" component={Detalle}/> 
+      <Route path="/favoritos" component={Favoritos}/> 
+      <Route path="/vermas" component={verMas}/>
+
+    </div>
+
+
+  );
 }
 
 export default App;
