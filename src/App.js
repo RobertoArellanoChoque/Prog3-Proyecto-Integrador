@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css';
-import { Link, Route} from 'react-router-dom';
+import { Link, Route, Switch} from 'react-router-dom';
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer';
 import Home from './pages/home/Home';
@@ -15,10 +15,13 @@ import verMas from './pages/verMas/verMas';
 function App() {
   return (
     <div>
-      <Route path="/" component={Home}/> 
+      <Switch>
+      <Route path="/" exact component={Home}/> 
       <Route path="/detalle" component={Detalle}/> 
       <Route path="/favoritos" component={Favoritos}/> 
       <Route path="/vermas" component={verMas}/>
+      <Route component={NotFound}/>
+      </Switch>
 
     </div>
 
