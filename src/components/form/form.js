@@ -25,19 +25,25 @@ class Form extends Component {
         console.log(this.state.nombre)
     }
 
+    handleSubmit(e){
+       e.preventDefault() 
+       console.log(this.state.nombre)
+
+
+    }
+
     render(){
         return (
             <>
-            <form>
+            <form onSubmit ={(e) => {this.handleSubmit(e)}} >
                 <label></label>
                 <input
                 type="text"
                 name="nombre"
                 onChange={(e)=>{this.handleChage(e)}}
                 value={this.state.nombre}
-                
-
                 />
+                <button type="submit"  >Enviar</button>
 
             </form>
             </>
