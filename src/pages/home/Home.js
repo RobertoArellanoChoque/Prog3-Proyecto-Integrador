@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Nav from "../../components/nav/Nav";
 
 class Home extends Component {
 
@@ -12,6 +13,8 @@ class Home extends Component {
     render() {
         return (
             <div>
+                <Nav></Nav>
+                
                 <h1>Soy el puto Home</h1>
             </div>
 
