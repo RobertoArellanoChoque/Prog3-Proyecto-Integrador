@@ -1,5 +1,14 @@
 import React from "react"
 import Form from "../form/form";
+import { Link } from "react-router-dom";
+
+// export default class Navbar extends compressToEncodedURIComponent{
+//     render(){
+//         return {
+
+//         }
+//     }
+// }
 
 const Nav = () => {
 

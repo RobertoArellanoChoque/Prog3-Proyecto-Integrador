@@ -14,7 +14,6 @@ class Home extends Component {
         return (
             <div>
                 <Nav></Nav>
-                
                 <h1>Soy el puto Home</h1>
             </div>
 
