@@ -1,5 +1,4 @@
 import React, {Component}  from "react"
-import { Link, Route, Switch} from 'react-router-dom';
 
 class Form extends Component {
 
@@ -9,6 +8,8 @@ class Form extends Component {
             nombre:""
         }
     }
+
+    
 
     controlCambios(e){
         this.setState({
