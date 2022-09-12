@@ -1,16 +1,22 @@
-import React from "react"
+import React, { Component } from "react"
 
-const Home = () => {
+class Home extends Component {
 
-    return (
-       <div>
-        <h1>Soy el puto home</h1>
-       </div>
-        
-    );
+    constructor() {
+        super();
+        this.state = {
+            valor: 0,
+        }
+    }
 
+    render() {
+        return (
+            <div>
+                <h1>Soy el puto Home</h1>
+            </div>
 
-
-};
+        );
+    };
+}
 
 export default Home
