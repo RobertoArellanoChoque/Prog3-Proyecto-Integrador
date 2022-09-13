@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Song extends Component {
+class Pelicula extends Component {
     componentDidMount() {
         const url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=10"
         fetch(url)
@@ -19,4 +19,4 @@ class Song extends Component {
     }
 }
 
-export default Song
+export default Pelicula
