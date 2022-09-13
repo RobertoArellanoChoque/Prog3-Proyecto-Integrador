@@ -1,4 +1,6 @@
-import React from "react"
+import React from "react";
+import Pelicula from "../../components/Pelicula/Pelicula";
+import Serie from "../../components/Serie/Serie";
 
 const Detalle = () => {
 

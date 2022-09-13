@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+
 function Card({pelicula}) {
 let {poster_path, title, overview, id} = pelicula
 
@@ -15,7 +16,7 @@ const borrar = () => {
             <h3>{title}</h3>
             <p>{overview}</p>
             <button onClick={borrar}>Borrar</button>
-            <button><Link to={`/movies/id/${id}`}>Detalle</Link></button>
+            <button><Link to={`/detalle/id/${id}`}>Detalle</Link></button>
             <button><Link to={`//id/${id}`}>Ver Más</Link></button>
         </div>
     </div>
