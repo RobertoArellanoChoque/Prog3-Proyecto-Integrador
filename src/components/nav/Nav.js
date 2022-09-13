@@ -1,50 +1,36 @@
-import React from "react"
-import Form from "../form/form";
-import { Link } from "react-router-dom";
+import React from 'react' 
+import {Link} from 'react-router-dom'
 
-// export default class Navbar extends compressToEncodedURIComponent{
-//     render(){
-//         return {
 
-//         }
-//     }
-// }
+export default function Nav() {
+  return (
 
-const Nav = () => {
-
-    return (
-        <>
-            <nav className="">
-                <div className="">              
-                    <div className="">
-                        <ul className="">
-                            <li className="">
-                                <a className="">Home</a>
-                            </li>
-                            <li className="">
-                                <a className="">Features</a>
-                            </li>
-                            <li className="">
-                                <a className="">Pricing</a>
-                            </li>
-                            <li className="">
-                                <a className="">Disabled</a>
-                            </li>
-                            <li>
-                            <Form></Form>
-                            </li>
-                        </ul>
-                    </div>
+    <header>
+        <nav>
+                <div className="burguermenu">
+                            
                 </div>
-            </nav>
-
-
-        </>
-
-    );
-
-
-
-};
-
-export default Nav
+                <div className="logo">
+                        <img src="./img/logo.png" />
+                    </div>
+                <div className="header-nav">
+                    <Link className="header-nav" aria-current="page" to="/">Inicio</Link>
+                </div>
+                <div className="header-nav">
+                    <Link className="header-nav" aria-current="page" to="/vermas">Ver más</Link>
+                </div>  
+                <div className="header-nav">
+                    <Link className="header-nav" to='/favoritos' aria-current="page">Favoritos</Link>
+                </div>
+                <div className= "header-busqueda">
+                        <form action="" method="GET">
+                            <input type="search" name="busqueda"  placeholder="Buscar películas o series"/>
+                            <p className="alert"></p>
+                        </form>
+                        <a href="./results.html"><i className="fas fa-search lupa"></i></a>
+                </div>
+          </nav>
+    </header>
+            
+  )
+}

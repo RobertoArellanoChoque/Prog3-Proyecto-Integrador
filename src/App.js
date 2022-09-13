@@ -15,6 +15,7 @@ import verMas from './pages/verMas/verMas';
 function App() {
   return (
     <div>
+      <Header></Header>
       <Switch>
       <Route path="/" exact component={Home}/> 
       <Route path="/detalle" component={Detalle}/> 
@@ -22,7 +23,7 @@ function App() {
       <Route path="/vermas" component={verMas}/>
       <Route component={NotFound}/>
       </Switch>
-
+      <Footer></Footer>
     </div>
 
 

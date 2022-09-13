@@ -1,15 +1,13 @@
 import React from "react";
-
+import Navegation from '../nav/Nav'
 
 const Header = () => {
-
+    
     return (
-        <h1>Hola soy el Header</h1>
+        <>
+           <Navegation/> 
+        </>
+    )
+}
 
-    );
-
-
-
-};
-
-export default Header
+export default Header;

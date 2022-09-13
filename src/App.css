@@ -5,8 +5,359 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+ 
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+  font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
 }
 
+input{
+  font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
+}
+
+body{
+  /* background-image: url(./img/fondobody.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+  background-color:#218EAB;
+  font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
+}
+
+/* Aqui comienza el header */
+
+body header{
+  background-color: #080f28;
+  background-repeat: no-repeat;
+  background-position: top;
+  height: 125px;
+}
+
+.header-nav a{
+  text-decoration: none;
+  color: white;  
+  margin-top: 10px;
+  padding: 10px 45px;
+  background-color:#218EAB;
+  font-weight: bolder;
+  border-radius: 15px;
+}
+
+.header-registro{
+  display: flex;
+  align-items: center;
+}
+
+.header-registro a input{
+  border: white;
+  border-width: 2px;
+  border-style:solid;
+  color:white;  
+  background-color: #218EAB;
+  padding: 10px 10px;
+  border-radius: 30px;
+  margin-top: 0px;
+}
+
+.header-busqueda {
+  display: flex;
+  align-items: center;   
+}
+
+.lupa{
+  color: #218EAB;
+  margin:0px 0px 36px 10px;
+}
+
+.burguermenu{ 
+  margin-top: 6.5%;
+  display: none;
+}
+
+.header-busqueda input {
+  border:none;  
+  background-color: #218EAB;
+  padding: 10px 10px;
+  border-radius: 30px;
+  margin-top: 30px;
+  
+}
+
+.alert{
+  color: white;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: bolder;
+  text-align: center;
+}
+
+::placeholder{
+  color: white;
+}
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 15%;
+  
+}
+header{
+  /* background-image: url(../img/fondoclaro.jpg); */
+  max-width: 100%;
+}
+.logo img {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+  padding: 2%;
+  background-color: #218EAB;
+} 
+
+.registro-logo{
+  display: flex;
+  justify-content: center;
+  background-color:#218EAB;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: none;
+}
+
+.registro-logo i{
+  color: black;
+}
+
+.header-nav{
+  padding: 40px 0px 0px 0px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* Aquí comienza el footer */
+footer {
+  width: 100%;
+  padding: 30px 20px;
+  background-color: #080f28;
+  height: 3%;
+  background-size: cover;
+  border-top-right-radius: 7%;
+  border-top-left-radius: 7%;
+  margin-top: 3%;
+}
+
+.container_footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1900px;
+  margin: auto;
+  background-color:#080f28;
+  background-size: cover;
+  padding: 2% 5%;
+  border-top-right-radius: 15%;
+  border-top-left-radius: 15%;
+}
+.box-footer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.box-footer .logo img {
+  width: 200px;
+}
+.box-footer .terms {
+  max-width: 350px;
+  margin-top: 20px;
+  font-weight: 500;
+  color:white;
+  font-size: 18px;
+}
+.box-footer h2 {
+  margin-bottom: 20px;
+  color:white;
+  font-weight: 700;
+}
+.box-footer a {
+  color: white;
+  margin-top: 20px;
+  font-weight: 650;
+  text-decoration: none;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.box-footer a .fab {
+  font-size: 25px;
+}
+.box-copyright {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  padding: 0px 20px;
+  color: white;
+}
+
+.box-copyright .integrantes {
+  margin-bottom: 20px;
+  font-weight: bolder;
+  
+}
+.box-copyright p {
+  color: white;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 17px;
+}
+.box-copyright hr{
+  background-color: white;
+  width: 1200px;
+  border: none;
+  height: 3px;
+}
+.titulo{
+  display: inline-block;
+  background-color: #080f28;
+  color: white;
+  max-width: 1900px;
+  margin: 2% 5%;
+  width: 90%;
+  border-radius: 20px;
+  padding: 15px;
+  text-align: left;
+}
+.tituloSeries{
+  display: inline-block;
+  background-color: #080f28;
+  color: white;
+  max-width: 1900px;
+  margin: 2% 5%;
+  width: 90%;
+  border-radius: 20px;
+  padding: 15px;
+  text-align: left;
+}
+.contenedor{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 60px 0;
+  width: 90%;
+  max-width: 1900px;
+  margin: auto;
+  background-color: #080f28;
+  border-radius: 20px;
+
+}
+.contenedorSerie{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 60px 0;
+  width: 90%;
+  max-width: 1900px;
+  margin: auto;
+  background-color: #080f28;
+  border-radius: 20px;
+
+}
+.contenedorSeries{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 60px 0;
+  width: 90%;
+  max-width: 1900px;
+  margin: auto;
+  background-color: #080f28;
+  border-radius: 20px;
+
+}
+.contenedor1{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 60px 0;
+  width: 90%;
+  max-width: 1900px;
+  margin: auto;
+  background-color: #080f28;
+  border-radius: 20px;
+
+}
+.contenedor2{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 60px 0;
+  width: 90%;
+  max-width: 1900px;
+  margin: auto;
+  background-color: #080f28;
+  border-radius: 20px;
+
+}
+.contenedor3{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 60px 0;
+  width: 90%;
+  max-width: 1900px;
+  margin: auto;
+  background-color: #080f28;
+  border-radius: 20px;
+
+}
+.contenedor h2{
+  color:green;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.contenedor .hijo{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  background-color:#080f28;
+}
+.imagen-port{
+  display: block;
+  background-color:#218EAB;
+  max-width: 250px;
+  align-items: center;
+  margin: 4%;
+  padding: 2%;
+  border-radius: 15px;
+ 
+}
+.imagen-port img{
+  display: block;
+  width: 90%;
+  margin: auto;
+  padding-top: 10%;
+}
+.imagen-port h3{
+  text-transform: uppercase;
+  margin-top: 15px;
+  margin-bottom:  15px;
+  color:white;
+  text-align: center;
+  width: 100%;
+}
+.imagen-port p{
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
