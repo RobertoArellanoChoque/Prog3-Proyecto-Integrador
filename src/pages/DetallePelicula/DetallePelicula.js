@@ -1,5 +1,4 @@
-import React from "react";
-import { Component } from "react";
+import React, { Component } from "react";
 
 class DetallePelicula extends Component {
 
@@ -7,11 +6,14 @@ class DetallePelicula extends Component {
         super(props)
         this.state = {
             id: this.props.match.params.id,
-            detail: {}
+            detail: {},
+            favoritos: []
         }
     }
 
     componentDidMount() {
+        console.log(this.state.favoritos)  
+        this.setState({favoritos: JSON.parse(localStorage.getItem('favoritos')) || []})
         const url = `https://api.themoviedb.org/3/movie/${this.state.id}?api_key=c0945689b0a582e110971301d6ea8be2`
         fetch(url)
             .then((res) => res.json())
@@ -34,7 +36,7 @@ class DetallePelicula extends Component {
                 <p>Duración: {this.state.detail.runtime}</p>
                 <p>Sinópsis: {this.state.detail.overview}</p>
                 <p>Género al que pertenece la película: </p>
-                <button>Agregar a Favoritos</button>
+                <button onClick={()=>console.log("Favoritos")}>Agregar a Favoritos</button>
             </>
         )
     }

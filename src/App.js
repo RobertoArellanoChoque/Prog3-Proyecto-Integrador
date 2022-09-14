@@ -1,8 +1,8 @@
 import React from 'react'
 import './App.css';
-import { Link, Route, Switch} from 'react-router-dom';
-import Header from './components/header/Header'
-import Footer from './components/footer/Footer';
+import { Route, Switch} from 'react-router-dom';
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer';
 import Home from './pages/home/Home';
 import DetallePelicula from './pages/DetallePelicula/DetallePelicula';
 import NotFound from './pages/notfound/Notfound';
