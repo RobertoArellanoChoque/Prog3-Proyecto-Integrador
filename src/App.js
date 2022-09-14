@@ -4,7 +4,7 @@ import { Link, Route, Switch} from 'react-router-dom';
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer';
 import Home from './pages/home/Home';
-import Detalle from './pages/detalle/Detalle';
+import DetallePelicula from './pages/DetallePelicula/DetallePelicula';
 import NotFound from './pages/notfound/Notfound';
 // import Album from './components/album/Album';
 // import Songs from './components/song/Songs';
@@ -18,7 +18,7 @@ function App() {
       <Header></Header>
       <Switch>
       <Route path="/" exact component={Home}/> 
-      <Route path="/detalle/id/:id" component={Detalle}/> 
+      <Route path="/detallepelicula/id/:id" component={DetallePelicula}/> 
       <Route path="/favoritos" component={Favoritos}/> 
       <Route path="/vermas" component={verMas}/>
       <Route component={NotFound}/>
