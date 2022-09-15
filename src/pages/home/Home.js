@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Card from '../../components/Card/Card';
-
+import Card from '../../components/card/Card';
+import CardS from '../../components/card/cardS';
 
 class Home extends Component {
 
@@ -8,33 +8,54 @@ class Home extends Component {
     super();
     this.state = {
       cargando: true,
-      populares: [],
-      encartel: [],
+      popularesP: [],
+      valoradosP: [],
+      popularesS: [],
+      valoradosS: [],
     };
   }    
 
  componentDidMount(){
-    const populares = "https://api.themoviedb.org/3/movie/popular?api_key=fcb65972de75954111563f90b05f9fed"
-    fetch(populares)
+
+    const popularesP = "https://api.themoviedb.org/3/movie/popular?api_key=fcb65972de75954111563f90b05f9fed"
+      fetch(popularesP)
         .then((res)=> res.json())
         .then(datos =>{ 
             console.log(datos)
              return this.setState({
-            populares: datos.results,
+            popularesP: datos.results.slice(0,5),
         })})
         .catch( err => console.log(err))
 
-        const encartel = "https://api.themoviedb.org/3/movie/now_playing?api_key=fcb65972de75954111563f90b05f9fed"
-        fetch(encartel)
-            .then((res)=> res.json())
-            .then(datos =>{ 
-                console.log(datos)
-                 return this.setState({
-                encartel: datos.results,
+    const valoradosP = "https://api.themoviedb.org/3/movie/top_rated?api_key=fcb65972de75954111563f90b05f9fed"
+      fetch(valoradosP)
+          .then((res)=> res.json())
+          .then(datos =>{ 
+              console.log(datos)
+              return this.setState({
+              valoradosP: datos.results.slice(0,5),
             })})
             .catch( err => console.log(err))
       
-    
+    const popularesS = "https://api.themoviedb.org/3/tv/popular?api_key=fcb65972de75954111563f90b05f9fed"
+      fetch(popularesS)
+          .then((res)=> res.json())
+          .then(datos =>{ 
+                console.log(datos)
+                return this.setState({
+                popularesS: datos.results.slice(0,5),
+              })})
+          .catch( err => console.log(err))
+      
+    const valoradosS = "https://api.themoviedb.org/3/tv/top_rated?api_key=fcb65972de75954111563f90b05f9fed"
+      fetch(valoradosS)
+          .then((res)=> res.json())
+          .then(datos =>{ 
+               console.log(datos)
+               return this.setState({
+               valoradosS: datos.results.slice(0,5),
+                  })})
+          .catch( err => console.log(err))
  }
  render() {
     return (
@@ -48,26 +69,52 @@ class Home extends Component {
             {this.state.cargando === false ? (
              <p>Cargando</p>
             ) : (
-            this.state.populares.map(pelicula =>(
+            this.state.popularesP.map(pelicula =>(
                <Card key={pelicula.id} pelicula={pelicula}/>)
            )
            )  
             }
     </section>
     <div class="titulo">
-          <h2>• PELÍCULAS EN CARTEL •</h2>
+          <h2>• PELÍCULAS MÁS VALORADAS •</h2>
     </div>
     <section className='contenedor1'>
             {this.state.cargando === false ? (
              <p>Cargando</p>
             ) : (
-            this.state.encartel.map(pelicula =>(
+            this.state.valoradosP.map(pelicula =>(
              <Card key={pelicula.id} pelicula={pelicula}/>)
           )
            )  
             }
-    </section>
+    </section> 
 
+    <div class="titulo">
+          <h2>• LO MÁS VISTO EN SERIES •</h2>
+    </div>
+    <section className='contenedor'>
+            {this.state.cargando === false ? (
+             <p>Cargando</p>
+            ) : (
+            this.state.popularesS.map(serie =>(
+               <CardS key={serie.id} serie={serie}/>)
+           )
+           )  
+            }
+    </section>
+    <div class="titulo">
+          <h2>• SERIES MÁS VALORADAS •</h2>
+    </div>
+    <section className='contenedor1'>
+            {this.state.cargando === false ? (
+             <p>Cargando</p>
+            ) : (
+            this.state.valoradosS.map(serie =>(
+             <CardS key={serie.id} serie={serie}/>)
+          )
+           )  
+            }
+    </section>
 </>
 
     

@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 function Card({pelicula}) {
-let {poster_path, title, overview, id} = pelicula
+let  {poster_path, title, overview, id} = pelicula 
 
 const borrar = () => {
   console.log(borrar)
@@ -20,8 +20,6 @@ const borrar = () => {
             <button><Link to={`//id/${id}`}>Ver Más</Link></button>
         </div>
     </div>
-
-
   )
 }
 
