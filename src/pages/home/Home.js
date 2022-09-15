@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import Card from '../../components/card/Card';
+<<<<<<< HEAD
 import CardS from '../../components/card/cardS';
+=======
+
+>>>>>>> ab186bd91ab44614f04ff47fa8d00aa3ebf9096c
 
 class Home extends Component {
 
