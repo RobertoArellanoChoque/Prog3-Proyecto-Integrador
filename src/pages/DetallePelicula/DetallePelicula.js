@@ -6,10 +6,13 @@ class DetallePelicula extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            cargando: false,
             id: this.props.match.params.id,
             detail: {},
             pelicula: [],
-            favoritos: []
+            favoritos: [],
+            button: [],
+            genero:""
         }
     }
 
@@ -22,7 +25,9 @@ class DetallePelicula extends Component {
             .then(data => {
                 console.log(data)
                 return this.setState({
-                    detail: data
+                    cargando: true,
+                    detail: data,
+                    genero: data.genres[0].name
                 })
             })
             .catch(err => console.log(err))
@@ -41,6 +46,10 @@ class DetallePelicula extends Component {
         }
     }
 
+    handleButton(){
+        this.setState({boton: !this.state.button}, ()=>{this.handleFavoritos(this.state.favoritos)})
+    }
+
     render() {
         return (
             <>
@@ -53,8 +62,8 @@ class DetallePelicula extends Component {
                     <strong>Fecha de estreno:</strong> <p>{this.state.detail.release_date}</p>
                     <strong>Duración:</strong> <p>{this.state.detail.runtime}</p>
                     <strong>Sinópsis:</strong> <p>{this.state.detail.overview}</p>
-                    <strong>Género:</strong> <p>k</p>
-                    <button onClick={() => { this.handleFavoritos() }}>Favoritos</button>
+                    <strong>Género:</strong> <p>{this.state.genero}</p>
+                    <button onClick={() => this.handleButton()}>{this.state.button ? '⭐' : '❌'}</button>
                     <div>
                         {
                             this.state.cargando === false ? (

@@ -5,10 +5,12 @@ class DetalleSerie extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            cargando: false,
             id: this.props.match.params.id,
             detail: {},
             serie: [],
-            favoritos: []
+            favoritos: [],
+            genero:""
         }
     }
 
@@ -19,7 +21,10 @@ class DetalleSerie extends Component {
             .then(data => {
                 console.log(data)
                 return this.setState({
-                    detail: data
+                    cargando: true,
+                    detail: data,
+                    genero: data.genres[0].name
+
                 })
             })
             .catch(err => console.log(err))
@@ -36,7 +41,7 @@ class DetalleSerie extends Component {
                     <strong>Rating:</strong> <p>{this.state.detail.vote_average}</p>
                     <strong>Fecha de estreno:</strong> <p>{this.state.detail.first_air_date}</p>
                     <strong>Sinópsis:</strong> <p>{this.state.detail.overview}</p>
-                    <strong>Género:</strong> <p>j</p>
+                    <strong>Género:</strong> <p>{this.state.genero}</p>
                     <button onClick={() => console.log("Favoritos")}>Favoritos</button>
                 </div>
             </>
