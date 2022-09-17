@@ -16,18 +16,20 @@ class Favorito extends Component {
 
     render() {
         return (
-            <>  
-            {this.state.favoritos.map( item=> (
-                <Card
-                key={item.id}
-                pelicula={item}
-                />
-
-
-
-            ) )}
-            
-            </>
+            <div>
+                {this.state.favoritos === null ? <h2>No peliculas favoritas</h2>:
+                this.state.favoritos.map ( item =>(
+                    <Card
+                    
+                    key= {item.id}
+                    pelicula={item}
+                    
+                    />
+                ) )
+                
+                }
+               
+            </div>
         )
     }
 }
