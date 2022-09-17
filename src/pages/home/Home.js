@@ -103,6 +103,7 @@ render() {
         <button type="submit"  >Enviar</button>
 
       </form>
+      {this.state.filterBy <= 0 ? <h2>No hay busqueda</h2> : <h2>Si hay busqueda</h2> }
       <div class="titulo">
         <h2>• LO MÁS VISTO EN PELÍCULAS •</h2>
       </div>
@@ -129,6 +130,7 @@ render() {
         )
         }
       </section>
+      
 
       <div class="titulo">
         <h2>• LO MÁS VISTO EN SERIES •</h2>
