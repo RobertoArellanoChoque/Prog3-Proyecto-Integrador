@@ -22,13 +22,7 @@ export default function Nav() {
                 <div className="header-nav">
                     <Link className="header-nav" to='/favoritos' aria-current="page">Favoritos</Link>
                 </div>
-                <div className= "header-busqueda">
-                        <form action="" method="GET">
-                            <input type="search" name="busqueda"  placeholder="Buscar películas o series"/>
-                            <p className="alert"></p>
-                        </form>
-                        <a href="./results.html"><i className="fas fa-search lupa"></i></a>
-                </div>
+                
           </nav>
     </header>
             

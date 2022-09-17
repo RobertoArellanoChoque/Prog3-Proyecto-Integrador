@@ -1,13 +1,15 @@
-import React from "react"
+import React from "react";
+
+import { Link } from "react-router-dom";
 
 const verMas = () => {
 
     return (
-       <div>
-        <h1>Soy el puto verMas</h1>
-       </div>
+       <>
+       <Link className = "verMas " aria-current="page" to="/peliculasP"> <button> Ver Todas las películas populares</button> </Link>
+       </>
         
-    );
+    )
 
 
 

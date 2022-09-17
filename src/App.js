@@ -9,7 +9,7 @@ import DetalleSerie from './pages/DetalleSerie/DetalleSerie';
 import NotFound from './pages/notfound/Notfound';
 import Favoritos from './pages/favoritos/Favoritos';
 import verMas from './pages/verMas/verMas';
-
+import PeliculasP from './pages/peliculasP/PeliculasP';
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
       <Route path="/detalleserie/id/:id" component={DetalleSerie}/>
       <Route path="/favoritos" component={Favoritos}/> 
       <Route path="/vermas" component={verMas}/>
+      <Route path="/peliculasP" component={PeliculasP}/>
       <Route component={NotFound}/>
       </Switch>
       <Footer></Footer>

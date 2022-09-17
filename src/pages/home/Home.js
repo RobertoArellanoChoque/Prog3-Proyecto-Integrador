@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Card from '../../components/card/Card';
 import CardS from '../../components/card/cardS';
 import CardB from '../../components/card/CardB';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
 
@@ -118,8 +119,9 @@ render() {
       </div>
       {this.state.filterBy <= "0" ? 
       <>
-      <div class="titulo">
+      <div className="titulo">
         <h2>• LO MÁS VISTO EN PELÍCULAS •</h2>
+        <Link className = "verMas " aria-current="page" to="/peliculasP"> <button> Ver Todas</button> </Link>
       </div>
       <section className='contenedor'>
         {this.state.cargando === false ? (
@@ -146,7 +148,7 @@ render() {
       </section>
       
 
-      <div class="titulo">
+      <div className="titulo">
         <h2>• LO MÁS VISTO EN SERIES •</h2>
       </div>
       <section className='contenedor'>
@@ -159,7 +161,7 @@ render() {
         )
         }
       </section>
-      <div class="titulo">
+      <div className="titulo">
         <h2>• SERIES MÁS VALORADAS •</h2>
       </div>
       <section className='contenedor1'>
