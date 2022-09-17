@@ -17,7 +17,7 @@ class Favorito extends Component {
     render() {
         return (
             <div>
-                {this.state.favoritos === null ? <h2>No peliculas favoritas</h2>:
+                {this.state.favoritos === [] ? <h2>No peliculas favoritas</h2>:
                 this.state.favoritos.map ( item =>(
                     <Card
                     
