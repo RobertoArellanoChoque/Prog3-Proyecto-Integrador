@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Card from '../../components/card/Card';
 import CardS from '../../components/card/cardS';
+import CardB from '../../components/card/CardB';
 
 class Home extends Component {
 
@@ -12,8 +13,11 @@ class Home extends Component {
       valoradosP: [],
       popularesS: [],
       valoradosS: [],
+      busqueda:[],
       filterBy: ""
+      
     };
+    
   }
 
   componentDidMount() {
@@ -69,6 +73,9 @@ class Home extends Component {
       .then((res) => res.json())
       .then(datos => {
         console.log(datos)
+        return this.setState({
+          busqueda: datos.results.slice(0, 5),
+        })
       })
       .catch(err => console.log(err))
     
@@ -87,6 +94,9 @@ handleSubmit(e){
 
 
 }
+componentDidUpdate(){
+
+}
 render() {
   return (
 
@@ -103,7 +113,8 @@ render() {
         <button type="submit"  >Enviar</button>
 
       </form>
-      {this.state.filterBy <= 0 ? <h2>No hay busqueda</h2> : <h2>Si hay busqueda</h2> }
+      {this.state.filterBy <= "0" ? 
+      <>
       <div class="titulo">
         <h2>• LO MÁS VISTO EN PELÍCULAS •</h2>
       </div>
@@ -157,9 +168,28 @@ render() {
           )
         )
         }
-      </section>
+      </section> 
+      </>
+      
+      : 
+      <>
+      {this.state.busqueda.map(buscado => (
+        <CardB
 
-    </>
+        id = {buscado.id}
+        name = {buscado.original_name}
+        title = {buscado.original_title}
+        overview = {buscado.overview}
+        
+        
+        />
+      ))}
+      </> 
+      }
+      </>
+      
+
+    
 
 
   )
