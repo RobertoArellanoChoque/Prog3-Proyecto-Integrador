@@ -66,7 +66,8 @@ body header{
 
 .header-busqueda {
   display: flex;
-  align-items: center;   
+  align-items: center;
+  margin-left: 30px ;   
 }
 
 .lupa{
@@ -81,10 +82,11 @@ body header{
 
 .header-busqueda input {
   border:none;  
-  background-color: #218EAB;
+  background-color: hsl(0, 0%, 100%);
   padding: 10px 10px;
   border-radius: 30px;
   margin-top: 30px;
+  border-color: #080f28;
   
 }
 

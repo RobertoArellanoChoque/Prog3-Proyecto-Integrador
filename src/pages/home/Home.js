@@ -74,7 +74,7 @@ class Home extends Component {
       .then(datos => {
         console.log(datos)
         return this.setState({
-          busqueda: datos.results.slice(0, 5),
+          busqueda: datos.results.slice(0, 15),
         })
       })
       .catch(err => console.log(err))
@@ -102,6 +102,7 @@ render() {
 
 
     <>
+    <div className="header-busqueda" >
       <form onSubmit={(e) => { this.handleSubmit(e) }} >
         <label></label>
         <input
@@ -109,10 +110,12 @@ render() {
           name="nombre"
           onChange={(e) => { this.handleChage(e) }}
           value={this.state.filterBy}
+          placeholder="Buscar peliculas o series"
         />
-        <button type="submit"  >Enviar</button>
+        
 
       </form>
+      </div>
       {this.state.filterBy <= "0" ? 
       <>
       <div class="titulo">
@@ -172,19 +175,28 @@ render() {
       </>
       
       : 
+      <section className='contenedor1'>
       <>
       {this.state.busqueda.map(buscado => (
         <CardB
+
+        format = {buscado.media_type}
+
+        key= {buscado.id}
 
         id = {buscado.id}
         name = {buscado.original_name}
         title = {buscado.original_title}
         overview = {buscado.overview}
-        
+        imagen = {buscado.poster_path}
+        persona = {buscado.name}
+        perfil ={buscado.profile_path}
+       
         
         />
       ))}
       </> 
+      </section>
       }
       </>
       

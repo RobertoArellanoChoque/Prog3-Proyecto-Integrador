@@ -11,7 +11,7 @@ export default function Nav() {
                             
                 </div>
                 <div className="logo">
-                        <img src="./img/logo.png" />
+                        <img src="./img/logo.png" alt="logo"/>
                     </div>
                 <div className="header-nav">
                     <Link className="header-nav" aria-current="page" to="/">Inicio</Link>
