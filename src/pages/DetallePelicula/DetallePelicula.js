@@ -51,7 +51,7 @@ class DetallePelicula extends Component {
                 <p>Duración: {this.state.detail.runtime}</p>
                 <p>Sinópsis: {this.state.detail.overview}</p>
                 <p>Género al que pertenece la película: </p>
-                <button onClick={() => { this.handleFavoritos() }}>Agregar a Favoritos</button>
+                <button onClick={() => { this.handleFavoritos() }}> a Favoritos</button>
                 <div>
                     {
                         this.state.cargando === false ? (
