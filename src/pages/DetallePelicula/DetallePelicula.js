@@ -8,7 +8,7 @@ class DetallePelicula extends Component {
         this.state = {
             id: this.props.match.params.id,
             detail: {},
-            pelicula:[],
+            pelicula: [],
             favoritos: []
         }
     }
@@ -44,27 +44,31 @@ class DetallePelicula extends Component {
     render() {
         return (
             <>
-                <h1>{this.state.detail.title}</h1>
-                <img src={`https://image.tmdb.org/t/p/original${this.state.detail.poster_path}`} alt={this.state.detail.title} />
-                <p>Rating: {this.state.detail.vote_average}</p>
-                <p>Fecha de estreno: {this.state.detail.release_date}</p>
-                <p>Duración: {this.state.detail.runtime}</p>
-                <p>Sinópsis: {this.state.detail.overview}</p>
-                <p>Género al que pertenece la película: </p>
-                <button onClick={() => { this.handleFavoritos() }}> a Favoritos</button>
-                <div>
-                    {
-                        this.state.cargando === false ? (
-                            <p>Cargando</p>
-                        ) :
-                            this.state.pelicula.map(pelicula => (
-                                <Card
-                                    key={pelicula.id}
-                                    pelicula={pelicula}
-                                    favorito={(pelicula) => this.handleFavoritos(pelicula)}
-                                />)
-                            )
-                    }
+                <div className="d-pelicula">
+                    <h1>{this.state.detail.title}</h1>
+                    <div className="foto-pelicula-popular">
+                        <img src={`https://image.tmdb.org/t/p/original${this.state.detail.poster_path}`} alt={this.state.detail.title} />
+                    </div>
+                    <strong>Rating:</strong> <p>{this.state.detail.vote_average}</p>
+                    <strong>Fecha de estreno:</strong> <p>{this.state.detail.release_date}</p>
+                    <strong>Duración:</strong> <p>{this.state.detail.runtime}</p>
+                    <strong>Sinópsis:</strong> <p>{this.state.detail.overview}</p>
+                    <strong>Género:</strong> <p>k</p>
+                    <button onClick={() => { this.handleFavoritos() }}>Favoritos</button>
+                    <div>
+                        {
+                            this.state.cargando === false ? (
+                                <p>Cargando</p>
+                            ) :
+                                this.state.pelicula.map(pelicula => (
+                                    <Card
+                                        key={pelicula.id}
+                                        pelicula={pelicula}
+                                        favorito={(pelicula) => this.handleFavoritos(pelicula)}
+                                    />)
+                                )
+                        }
+                    </div>
                 </div>
             </>
 

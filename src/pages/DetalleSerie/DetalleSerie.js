@@ -7,18 +7,20 @@ class DetalleSerie extends Component {
         this.state = {
             id: this.props.match.params.id,
             detail: {},
+            serie: [],
+            favoritos: []
         }
     }
 
     componentDidMount() {
-        const url = `https://api.themoviedb.org/3/tv/${this.state.id}?api_key=c0945689b0a582e110971301d6ea8be2`
+        const url = `https://api.themoviedb.org/3/tv/${this.state.id}?api_key=f2acabc2f1f7dfa29f6493c2fcca003f&language=es`
         fetch(url)
             .then((res) => res.json())
             .then(data => {
                 console.log(data)
-                        return this.setState({
-                        detail: data
-                    })
+                return this.setState({
+                    detail: data
+                })
             })
             .catch(err => console.log(err))
     }
@@ -26,14 +28,17 @@ class DetalleSerie extends Component {
     render() {
         return (
             <>
-                <h1>{this.state.detail.title}</h1>
-                <img src = {`https://image.tmdb.org/t/p/original${this.state.detail.poster_path}`} alt = {this.state.detail.title}/>
-                <p>Rating: {this.state.detail.vote_average}</p>
-                <p>Fecha de estreno: {this.state.detail.release_date}</p>
-                <p>Duración: {this.state.detail.runtime}</p>
-                <p>Sinópsis: {this.state.detail.overview}</p>
-                <p>Género al que pertenece la película: </p>
-                <button onClick={()=>console.log("Favoritos")}>Agregar a Favoritos</button>
+                <div className="d-pelicula">
+                    <h1>{this.state.detail.name}</h1>
+                    <div className="foto-pelicula-popular">
+                        <img src={`https://image.tmdb.org/t/p/original${this.state.detail.poster_path}`} alt={this.state.detail.title} />
+                    </div>
+                    <strong>Rating:</strong> <p>{this.state.detail.vote_average}</p>
+                    <strong>Fecha de estreno:</strong> <p>{this.state.detail.first_air_date}</p>
+                    <strong>Sinópsis:</strong> <p>{this.state.detail.overview}</p>
+                    <strong>Género:</strong> <p>j</p>
+                    <button onClick={() => console.log("Favoritos")}>Favoritos</button>
+                </div>
             </>
         )
     }

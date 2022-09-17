@@ -358,11 +358,41 @@ footer {
   text-align: center;
   margin-bottom: 10px;
 }
+/*detalle pelicula*/
+.d-pelicula{
+  width: 30%;
+  margin: auto;
+  text-align: center;
+}
+.foto-pelicula-popular{
+  display: flex;
+  justify-content: space-around;
+}
+.foto-pelicula-popular img{
+  width: 40%;
+  padding: 10px;
+}
+/*detalle serie*/
+.d-series{
+  width: 30%;
+  margin: auto;
+  text-align: center;
+}
+.detalle-serie{
+  width: 100%;
+  margin: auto;
+} 
+.detalle-serie-art{
+  width: 30%;
+  margin: auto;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 
 .App-header {
   background-color: #282c34;
