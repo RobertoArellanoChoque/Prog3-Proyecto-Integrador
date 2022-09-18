@@ -8,6 +8,7 @@ class Favorito extends Component {
         this.state={ 
             favoritos:[]
         }
+        
     }
     componentDidMount () {
         this.setState({favoritos: JSON.parse(localStorage.getItem('favoritos'))})
@@ -15,14 +16,17 @@ class Favorito extends Component {
 
 
     render() {
+        console.log(this.state.favoritos)
         return (
             <div>
-                {this.state.favoritos === [] ? <h2>No peliculas favoritas</h2>:
+                {this.state.favoritos[0] === null ? <h2>No peliculas favoritas</h2>:
                 this.state.favoritos.map ( item =>(
                     <Card
                     
                     key= {item.id}
-                    pelicula={item}
+                    title={item.title}
+                    poster_path={item.poster_path}
+                    overview={item.overview}
                     
                     />
                 ) )
