@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CardS from '../../components/card/cardS';
+import CardS from '../../components/card/CardS';
 
 
 class SeriesP extends Component {

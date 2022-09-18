@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Card from '../../components/card/Card';
-import CardS from '../../components/card/cardS';
+import CardS from '../../components/card/CardS';
 import CardB from '../../components/card/CardB';
 import { Link } from 'react-router-dom';
 
