@@ -10,7 +10,7 @@ function CardS(props) {
               <a href={`/detalleserie/id/${id}`}><img src={`https://image.tmdb.org/t/p/original${poster_path}`} alt={poster_path}/></a>
               <h3>{name}</h3>
               <p>{overview}</p>
-              {/* <button className="btn btn-primary" onClick={()=>{props.favorito(props.serie)}} >Favoritos</button> */}
+              {/* <button className="btn btn-primary" onClick={()=>{props.favorito(props.serie)}} >Favoritos  ⭐</button> */}
               <button><Link to={`/detalleserie/id/${id}`}>Detalle</Link></button>
               <button><Link to={`//id/${id}`}>Ver Más</Link></button>
           </div>

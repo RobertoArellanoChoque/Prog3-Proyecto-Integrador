@@ -111,7 +111,7 @@ render() {
           name="nombre"
           onChange={(e) => { this.handleChage(e) }}
           value={this.state.filterBy}
-          placeholder="Buscar peliculas o series"
+          placeholder="Buscar peliculas o series 🔍"
         />
         
 

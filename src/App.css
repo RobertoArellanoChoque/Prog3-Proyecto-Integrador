@@ -69,7 +69,9 @@ body header{
   align-items: center;
   margin-left: 30px ;   
 }
-
+.header-busqueda ::placeholder{
+  color: #080f28;
+}
 .lupa{
   color: #218EAB;
   margin:0px 0px 36px 10px;

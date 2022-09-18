@@ -10,7 +10,7 @@ let  {poster_path, title, overview, id} = props.pelicula
             <a href={`/detallepelicula/id/${id}`}><img src={`https://image.tmdb.org/t/p/original${poster_path}`} alt={poster_path}/></a>
             <h3>{title}</h3>
             <p>{overview}</p>
-            <button className="btn btn-primary" onClick={()=>{props.favorito(props.pelicula)}} >Favoritos</button>
+            <button className="btn btn-primary" onClick={()=>{props.favorito(props.pelicula)}} >Favoritos  ⭐</button>
             <button><Link to={`/detallepelicula/id/${id}`}>Detalle</Link></button>
             <button><Link to={`//id/${id}`}>Ver Más</Link></button>
         </div>
