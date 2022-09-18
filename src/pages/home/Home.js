@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Card from '../../components/card/Card';
-import CardS from '../../components/card/cardS';
+import CardS from '../../components/card/CardS';
 import CardB from '../../components/card/CardB';
 import { Link } from 'react-router-dom';
 
@@ -14,11 +14,11 @@ class Home extends Component {
       valoradosP: [],
       popularesS: [],
       valoradosS: [],
-      busqueda:[],
+      busqueda: [],
       filterBy: ""
-      
+
     };
-    
+
   }
 
   componentDidMount() {
@@ -68,7 +68,7 @@ class Home extends Component {
       .catch(err => console.log(err))
   }
 
-  filtrarPersonajes(filtro){
+  filtrarPersonajes(filtro) {
     const peliculasPo = `https://api.themoviedb.org/3/search/multi?api_key=cd97ce54561a25ea3bbdfae70457a394&language=es&query=${filtro}`
     fetch(peliculasPo)
       .then((res) => res.json())
@@ -79,139 +79,167 @@ class Home extends Component {
         })
       })
       .catch(err => console.log(err))
-    
+
   }
   handleChage(e) {
     this.setState({
       filterBy: e.target.value
-    },()=>{
+    }, () => {
       this.filtrarPersonajes(this.state.filterBy)
     })
   }
 
-handleSubmit(e){
-  e.preventDefault()
-  console.log(this.state.nombre)
+  handleSubmit(e) {
+    e.preventDefault()
+    console.log(this.state.nombre)
 
 
-}
-componentDidUpdate(){
+  }
+  componentDidUpdate() {
 
-}
-render() {
-  return (
+  }
+  render() {
+    return (
 
 
-    <>
-    <div className="header-busqueda" >
-      <form onSubmit={(e) => { this.handleSubmit(e) }} >
-        <label></label>
-        <input
-          type="text"
-          name="nombre"
-          onChange={(e) => { this.handleChage(e) }}
-          value={this.state.filterBy}
-          placeholder="Buscar peliculas o series 🔍"
-        />
-        
-
-      </form>
-      </div>
-      {this.state.filterBy <= "0" ? 
       <>
-      <div className="titulo">
-        <h2>• LO MÁS VISTO EN PELÍCULAS •</h2>
-        <Link className = "verMas " aria-current="page" to="/peliculasP"> <button> Ver Todas</button> </Link>
-      </div>
-      <section className='contenedor'>
-        {this.state.cargando === false ? (
-          <p>Cargando</p>
-        ) : (
-          this.state.popularesP.map(pelicula => (
-            <Card key={pelicula.id} pelicula={pelicula} />)
-          )
-        )
-        }
-      </section>
-      <div className="titulo">
-        <h2>• PELÍCULAS MÁS VALORADAS •</h2>
-        <Link className = "verMas " aria-current="page" to="/peliculasV"> <button> Ver Todas</button> </Link>
-      </div>
-      <section className='contenedor1'>
-        {this.state.cargando === false ? (
-          <p>Cargando</p>
-        ) : (
-          this.state.valoradosP.map(pelicula => (
-            <Card key={pelicula.id} pelicula={pelicula} />)
-          )
-        )
-        }
-      </section>
-      
+        <div className="header-busqueda" >
+          <form onSubmit={(e) => { this.handleSubmit(e) }} >
+            <label></label>
+            <input
+              type="text"
+              name="nombre"
+              onChange={(e) => { this.handleChage(e) }}
+              value={this.state.filterBy}
+              placeholder="Buscar peliculas o series 🔍"
+            />
 
-      <div className="titulo">
-        <h2>• LO MÁS VISTO EN SERIES •</h2>
-        <Link className = "verMas " aria-current="page" to="/seriesP"> <button> Ver Todas</button> </Link>
-      </div>
-      <section className='contenedor'>
-        {this.state.cargando === false ? (
-          <p>Cargando</p>
-        ) : (
-          this.state.popularesS.map(serie => (
-            <CardS key={serie.id} serie={serie} />)
-          )
-        )
+
+          </form>
+        </div>
+        {this.state.filterBy <= "0" ?
+          <>
+            <div className="titulo">
+              <h2>• LO MÁS VISTO EN PELÍCULAS •</h2>
+              <Link className="verMas " aria-current="page" to="/peliculasP"> <button> Ver Todas</button> </Link>
+            </div>
+            <section className='contenedor'>
+              {this.state.cargando === false ? (
+                <p>Cargando</p>
+              ) : (
+                this.state.popularesP.map(pelicula => (
+                  <Card
+                    key={pelicula.id}
+                    pelicula={pelicula}
+                    id={pelicula.id}
+                    poster_path={pelicula.poster_path}
+                    title={pelicula.title}
+                    overview={pelicula.overview}
+                  />)
+                )
+              )
+              }
+            </section>
+            <div className="titulo">
+              <h2>• PELÍCULAS MÁS VALORADAS •</h2>
+              <Link className="verMas " aria-current="page" to="/peliculasV"> <button> Ver Todas</button> </Link>
+            </div>
+            <section className='contenedor1'>
+              {this.state.cargando === false ? (
+                <p>Cargando</p>
+              ) : (
+                this.state.valoradosP.map(pelicula => (
+                  <Card
+                    key={pelicula.id}
+                    pelicula={pelicula}
+                    id={pelicula.id}
+                    poster_path={pelicula.poster_path}
+                    title={pelicula.title}
+                    overview={pelicula.overview}
+                  />)
+                )
+              )
+              }
+            </section>
+
+
+            <div className="titulo">
+              <h2>• LO MÁS VISTO EN SERIES •</h2>
+              <Link className="verMas " aria-current="page" to="/seriesP"> <button> Ver Todas</button> </Link>
+            </div>
+            <section className='contenedor'>
+              {this.state.cargando === false ? (
+                <p>Cargando</p>
+              ) : (
+                this.state.popularesS.map(serie => (
+                  <CardS
+                    key={serie.id}
+                    serie={serie}
+                    id={serie.id}
+                    poster_path={serie.poster_path}
+                    name={serie.name}
+                    overview={serie.overview}
+                     />)
+                )
+              )
+              }
+            </section>
+            <div className="titulo">
+              <h2>• SERIES MÁS VALORADAS •</h2>
+              <Link className="verMas " aria-current="page" to="/seriesV"> <button> Ver Todas</button> </Link>
+            </div>
+            <section className='contenedor1'>
+              {this.state.cargando === false ? (
+                <p>Cargando</p>
+              ) : (
+                this.state.valoradosS.map(serie => (
+                  <CardS 
+                  key={serie.id} 
+                  serie={serie} 
+                  id={serie.id}
+                  poster_path={serie.poster_path}
+                  name={serie.name}
+                  overview={serie.overview}
+                  />)
+                )
+              )
+              }
+            </section>
+          </>
+
+          :
+          <section className='contenedor1'>
+            <>
+              {this.state.busqueda.map(buscado => (
+                <CardB
+
+                  format={buscado.media_type}
+
+                  key={buscado.id}
+
+                  id={buscado.id}
+                  name={buscado.original_name}
+                  title={buscado.original_title}
+                  overview={buscado.overview}
+                  imagen={buscado.poster_path}
+                  persona={buscado.name}
+                  perfil={buscado.profile_path}
+
+
+                />
+              ))}
+            </>
+          </section>
         }
-      </section>
-      <div className="titulo">
-        <h2>• SERIES MÁS VALORADAS •</h2>
-        <Link className = "verMas " aria-current="page" to="/seriesV"> <button> Ver Todas</button> </Link>
-      </div>
-      <section className='contenedor1'>
-        {this.state.cargando === false ? (
-          <p>Cargando</p>
-        ) : (
-          this.state.valoradosS.map(serie => (
-            <CardS key={serie.id} serie={serie} />)
-          )
-        )
-        }
-      </section> 
       </>
-      
-      : 
-      <section className='contenedor1'>
-      <>
-      {this.state.busqueda.map(buscado => (
-        <CardB
-
-        format = {buscado.media_type}
-
-        key= {buscado.id}
-
-        id = {buscado.id}
-        name = {buscado.original_name}
-        title = {buscado.original_title}
-        overview = {buscado.overview}
-        imagen = {buscado.poster_path}
-        persona = {buscado.name}
-        perfil ={buscado.profile_path}
-       
-        
-        />
-      ))}
-      </> 
-      </section>
-      }
-      </>
-      
-
-    
 
 
-  )
 
 
-}
+
+    )
+
+
+  }
 }
 export default Home;
