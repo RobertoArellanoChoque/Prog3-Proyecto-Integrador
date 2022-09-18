@@ -2,6 +2,7 @@
 import React from 'react'
 import { Component } from 'react'
 import { Link } from 'react-router-dom'
+import './Card.css'
 
 class Card extends Component {
   constructor(props){
