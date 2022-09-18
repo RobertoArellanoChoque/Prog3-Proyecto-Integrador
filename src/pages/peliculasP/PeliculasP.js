@@ -6,8 +6,9 @@ class PeliculasP extends Component{
     constructor() {
         super();
         this.state = {
-          cargando: false,
+          cargando: true,
           popularesP: [],
+          favoritos: [],
           busqueda:[],
           filterBy: "",
           mas: ""
@@ -24,30 +25,30 @@ class PeliculasP extends Component{
             return this.setState({
               popularesP: datos.results,
               cargando:true,
-            //   mas: datos.mas
+            //   mas: datos.page
             })
           })
           .catch(err => console.log(err))}
 
-        //   agregarMas() {
-        //     // Logica para agregar mas personajes
-        //     const url = `https://api.themoviedb.org/3/movie/popular?api_key=fcb65972de75954111563f90b05f9fed&language=es&page=${this.state.mas+1}`;
-        //     fetch(url)
-        //       .then( res => res.json())
-        //       .then( data => { this.setState({
-        //           mas: data.info.mas,
-        //           popularesP: this.state.popularesP.concat(data.results)
-        //         })
-        //       .catch( err => console.log(err))
-        //       })
+          agregarMas() {
+            // Logica para agregar mas personajes
+            const mas = `https://api.themoviedb.org/3/movie/popular?api_key=fcb65972de75954111563f90b05f9fed&language=es&page=${this.state.mas+1}`;
+            fetch(mas)
+              .then( res => res.json())
+              .then( data => { this.setState({
+                  mas: data.page,
+                  popularesP: this.state.popularesP.concat(data.results)
+                })
+              .catch( err => console.log(err))
+              })
            
-        // }
+        }
  render(){
     return (
         <>
         <div className="titulo">
             <h2>• LO MÁS VISTO EN PELÍCULAS •</h2>
-            <button className='btn btn-primary mb-3 mt-3' onClick={() => this.agregarMas()}>Más películas</button>
+            <button className= "verMas" onClick={() => this.agregarMas()}>Más películas</button>
       
          </div>
            
