@@ -1,0 +1,35 @@
+.contenedor .hijo{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color:#218EAB;
+  }
+  .imagen-port{
+    display: block;
+    background-color:#218EAB;
+    max-width: 250px;
+    align-items: center;
+    margin: 1%;
+    padding: 2%;
+   
+   
+  }
+  .imagen-port img{
+    display: block;
+    width: 95%;
+    margin: auto;
+    padding-top: 3%;
+  }
+  .imagen-port h3{
+    text-transform: uppercase;
+    margin-top: 15px;
+    margin-bottom:  15px;
+    color:black;
+    text-align: center;
+    width: 100%;
+  }
+  .imagen-port p{
+    color: black;
+    text-align: center;
+    margin-bottom: 10px;
+  }

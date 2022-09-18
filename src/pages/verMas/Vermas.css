@@ -1,0 +1,31 @@
+.contenedor1{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 60px 0;
+    margin-bottom: 2%;
+    background-color: #080f28;
+    
+  }
+  .vertodo {
+    background-color: #218EAB;
+    margin: 1%;
+    padding: 2%;
+  }
+  .vertodo img{
+    display: block;
+    width: 70%;
+    margin: auto;
+    padding: 1%;
+   
+  }
+  .vertodo button{
+    background-color: #218EAB;
+    border: none;
+    font-weight: bold;
+    margin-top: 6%;
+    margin-bottom: 2%;
+    font-size: large;
+
+  }

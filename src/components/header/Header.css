@@ -1,0 +1,76 @@
+/* Aqui comienza el header */
+
+body header{
+    background-color:#218EAB ;
+    background-repeat: no-repeat;
+    background-position: top;
+    height: 125px;
+   
+  }
+  
+  .header-nav a {
+    text-decoration: none;
+    color: white;  
+    background-color: #080f28;
+    padding: 15px 35px;
+    font-weight: bolder;
+    border-radius: 15px;
+    
+  }
+  
+  .header-registro{
+    display: flex;
+    align-items: center;
+  }
+  
+  .lupa{
+    color: #218EAB;
+    margin:0px 0px 36px 10px;
+  }
+  
+  .burguermenu{ 
+    margin-top: 6.5%;
+    display: none;
+  }
+  
+  
+  
+  .alert{
+    color: white;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: bolder;
+    text-align: center;
+  }
+  
+  ::placeholder{
+    color: white;
+  }
+  
+  nav{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 3%;
+    padding-bottom:3%;
+  
+    
+  }
+  header{
+    /* background-image: url(../img/fondoclaro.jpg); */
+    max-width: 100%;
+    padding-bottom: 12%;
+  }
+  .logo img {
+    background-color: #218EAB;
+    max-width: 200px;
+    margin-left: 0%;
+ 
+  } 
+  
+  
+  .header-nav{
+    padding: 40px 0px 0px 0px;
+    font-family: 'Noto Sans JP', sans-serif;
+    width: 10%;
+  }
+  

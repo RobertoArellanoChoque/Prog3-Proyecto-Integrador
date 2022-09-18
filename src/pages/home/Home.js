@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Card from '../../components/card/Card';
-import CardS from '../../components/card/CardS';
+import CardS from '../../components/card/cardS';
 import CardB from '../../components/card/CardB';
 import { Link } from 'react-router-dom';
+import './Home.css'
 
 class Home extends Component {
 
@@ -103,7 +104,7 @@ class Home extends Component {
 
 
       <>
-        <div className="header-busqueda" >
+        <div className="busqueda" >
           <form onSubmit={(e) => { this.handleSubmit(e) }} >
             <label></label>
             <input
@@ -121,7 +122,7 @@ class Home extends Component {
           <>
             <div className="titulo">
               <h2>• LO MÁS VISTO EN PELÍCULAS •</h2>
-              <Link className="verMas " aria-current="page" to="/peliculasP"> <button> Ver Todas</button> </Link>
+              <Link className="verMas " aria-current="page" to="/peliculasP"> <button> VER TODAS</button> </Link>
             </div>
             <section className='contenedor'>
               {this.state.cargando === false ? (
@@ -142,9 +143,9 @@ class Home extends Component {
             </section>
             <div className="titulo">
               <h2>• PELÍCULAS MÁS VALORADAS •</h2>
-              <Link className="verMas " aria-current="page" to="/peliculasV"> <button> Ver Todas</button> </Link>
+              <Link className="verMas " aria-current="page" to="/peliculasV"> <button> VER TODAS</button> </Link>
             </div>
-            <section className='contenedor1'>
+            <section className='contenedor'>
               {this.state.cargando === false ? (
                 <p>Cargando</p>
               ) : (
@@ -165,7 +166,7 @@ class Home extends Component {
 
             <div className="titulo">
               <h2>• LO MÁS VISTO EN SERIES •</h2>
-              <Link className="verMas " aria-current="page" to="/seriesP"> <button> Ver Todas</button> </Link>
+              <Link className="verMas " aria-current="page" to="/seriesP"> <button> VER TODAS</button> </Link>
             </div>
             <section className='contenedor'>
               {this.state.cargando === false ? (
@@ -185,10 +186,11 @@ class Home extends Component {
               }
             </section>
             <div className="titulo">
-              <h2>• SERIES MÁS VALORADAS •</h2>
-              <Link className="verMas " aria-current="page" to="/seriesV"> <button> Ver Todas</button> </Link>
+              <h2>• SERIES MÁS VALORADAS •</h2> 
+              <Link className="verMas " aria-current="page" to="/seriesV"> <button> VER TODAS</button> </Link>
+              
             </div>
-            <section className='contenedor1'>
+            <section className='contenedor'>
               {this.state.cargando === false ? (
                 <p>Cargando</p>
               ) : (
@@ -208,7 +210,7 @@ class Home extends Component {
           </>
 
           :
-          <section className='contenedor1'>
+          <section className='contenedor'>
             <>
               {this.state.busqueda.map(buscado => (
                 <CardB

@@ -1,0 +1,32 @@
+
+/*detalle pelicula*/
+.d-pelicula{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    text-align: center;
+    background-color: #080f28;
+    color: white;
+    text-transform:uppercase;
+  }
+  .d-pelicula h1{
+   margin-left: 43%;
+   padding-top: 2%;
+  }
+  .d-pelicula hr{
+    color: white;
+  }
+.contain{
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    justify-content: space-between;
+}
+  .foto-pelicula-popular img{
+    display: block;
+    margin: auto;
+    width: 40%;
+    padding: 15px;
+  }

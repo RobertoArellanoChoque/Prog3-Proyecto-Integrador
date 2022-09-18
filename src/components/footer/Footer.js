@@ -1,4 +1,5 @@
 import React from "react";
+import './Footer.css'
 
 export default function Footer(){  
 
@@ -35,20 +36,9 @@ export default function Footer(){
                     <a href="/">Privacidad</a>
                 </div>
                 
-                <div className="box-footer">
-                    <h2> REDES SOCIALES </h2>
                 
-                    <a href="/"> Instagram</a> 
-                       
-                    <a href="/"> Facebook</a>
-                        
-                    <a href="/"> Youtube</a>
-                       
-                    <a href="/"> Amazon</a>              
-                </div>
-             
                 <div className="box-copyright">
-                    <p className="integrantes"> B.R.A Music es un servicio de música gratuito que tiene como objetivo que todas las personas puedan accerder a contenido de calidad. Surge como una iniciativa de la coorporativa B.R.A S.A, encabezada y desarrollada por sus dueños fundadores Benjamin Peña, Roberto Arellano y Ana Teperman.</p>
+                    <p className="integrantes"> B.R.A Movies es un servicio de streaming gratuito que tiene como objetivo que todas las personas puedan accerder a contenido de calidad. Surge como una iniciativa de la coorporativa B.R.A S.A, encabezada y desarrollada por sus dueños fundadores Benjamin Peña, Roberto Arellano y Ana Teperman.</p>
                     <hr/>
                     <p className="derechos">Todos los derechos reservados ©️  2022 <b>B.R.A Music</b></p>
                 </div>
