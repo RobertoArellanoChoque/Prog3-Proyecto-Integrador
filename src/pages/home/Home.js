@@ -135,6 +135,7 @@ render() {
       </section>
       <div className="titulo">
         <h2>• PELÍCULAS MÁS VALORADAS •</h2>
+        <Link className = "verMas " aria-current="page" to="/peliculasV"> <button> Ver Todas</button> </Link>
       </div>
       <section className='contenedor1'>
         {this.state.cargando === false ? (
@@ -150,6 +151,7 @@ render() {
 
       <div className="titulo">
         <h2>• LO MÁS VISTO EN SERIES •</h2>
+        <Link className = "verMas " aria-current="page" to="/seriesP"> <button> Ver Todas</button> </Link>
       </div>
       <section className='contenedor'>
         {this.state.cargando === false ? (
@@ -163,6 +165,7 @@ render() {
       </section>
       <div className="titulo">
         <h2>• SERIES MÁS VALORADAS •</h2>
+        <Link className = "verMas " aria-current="page" to="/seriesV"> <button> Ver Todas</button> </Link>
       </div>
       <section className='contenedor1'>
         {this.state.cargando === false ? (
