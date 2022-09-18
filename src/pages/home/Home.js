@@ -128,7 +128,8 @@ render() {
           <p>Cargando</p>
         ) : (
           this.state.popularesP.map(pelicula => (
-            <Card key={pelicula.id} pelicula={pelicula} />)
+            <Card
+             key={pelicula.id}  pelicula={pelicula} />)
           )
         )
         }

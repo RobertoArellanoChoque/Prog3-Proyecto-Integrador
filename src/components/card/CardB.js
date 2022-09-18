@@ -2,10 +2,23 @@ import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 
 class CardB extends Component {
+  constructor(){
+super()
+this.state = {
+  verMas: true,
+}
 
-  mostrarDetalle (e){
-    let hideText = document.getElementById('hideText')
-    hideText.classList.toggle('info-show')
+  }
+
+  mostrarDetalle (){
+    this.setState({
+      verMas: false,
+    })
+  }
+  ocultarDetalle(){
+    this.setState({
+      verMas: true,
+    })
   }
 
   render(){
@@ -30,13 +43,28 @@ class CardB extends Component {
               :
               <h3>{this.props.name}</h3>
             }
-            <span className='info' id='hideText' >
-            <p  >{this.props.overview}</p>
-
-
-            </span>
+            {this.state.verMas === true ?
+            <>
+             <spam className='info' id='hideText' >
+              <p  >{this.props.overview}</p>
+            </spam>
             <button><Link to={`/detallepelicula/id/${this.props.id}`}>Detalle</Link></button>
-            <button onClick={() => this.mostrarDetalle()} >Ver mas</button>
+            <button id='hideTextButton' onClick={() => this.mostrarDetalle()} >Ver mas</button>
+    
+            </>
+            :
+            <>
+            <spam className='info-show' id='hideText' >
+              <p  >{this.props.overview}</p>
+            </spam>
+            <button><Link to={`/detallepelicula/id/${this.props.id}`}>Detalle</Link></button>
+            <button id='hideTextButton' onClick={() => this.ocultarDetalle()} >Ver menos</button>
+            
+            
+            </>
+            
+            
+            }
 
           </>
         }
