@@ -23,9 +23,8 @@ class PeliculasP extends Component {
       .then(datos => {
         console.log(datos)
         return this.setState({
-          popularesP: datos.results,
-          cargando: true,
-          //   mas: datos.page
+          mas: datos.page,
+          popularesP: datos.results.slice(0,15)
         })
       })
       .catch(err => console.log(err))
@@ -33,7 +32,7 @@ class PeliculasP extends Component {
 
   agregarMas() {
     // Logica para agregar mas personajes
-    const mas = `https://api.themoviedb.org/3/movie/popular?api_key=fcb65972de75954111563f90b05f9fed&language=es&page=${this.state.mas + 1}`;
+    const mas = `https://api.themoviedb.org/3/movie/popular?api_key=c0945689b0a582e110971301d6ea8be2&language=es&page=${this.state.mas+1}`;
     fetch(mas)
       .then(res => res.json())
       .then(data => {
@@ -41,8 +40,9 @@ class PeliculasP extends Component {
           mas: data.page,
           popularesP: this.state.popularesP.concat(data.results)
         })
+    })
           .catch(err => console.log(err))
-      })
+   
 
   }
   filtrarPersonajes(filtro) {

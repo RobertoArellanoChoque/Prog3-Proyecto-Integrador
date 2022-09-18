@@ -38,19 +38,19 @@ export default function Footer(){
                 <div className="box-footer">
                     <h2> REDES SOCIALES </h2>
                 
-                    <a href="/"> <i className="fab fa-instagram"></i> Instagram</a> 
+                    <a href="/"> Instagram</a> 
                        
-                    <a href="/"><i className="fab fa-facebook-square"></i> Facebook</a>
+                    <a href="/"> Facebook</a>
                         
-                    <a href="/"><i className="fab fa-youtube"></i> Youtube</a>
+                    <a href="/"> Youtube</a>
                        
-                    <a href="/"><i className="fab fa-amazon"></i> Amazon</a>              
+                    <a href="/"> Amazon</a>              
                 </div>
              
                 <div className="box-copyright">
                     <p className="integrantes"> B.R.A Music es un servicio de música gratuito que tiene como objetivo que todas las personas puedan accerder a contenido de calidad. Surge como una iniciativa de la coorporativa B.R.A S.A, encabezada y desarrollada por sus dueños fundadores Benjamin Peña, Roberto Arellano y Ana Teperman.</p>
                     <hr/>
-                    <p className="derechos">Todos los derechos reservados -  2022 <b>B.R.A Music</b></p>
+                    <p className="derechos">Todos los derechos reservados ©️  2022 <b>B.R.A Music</b></p>
                 </div>
             </article>
         </footer>
