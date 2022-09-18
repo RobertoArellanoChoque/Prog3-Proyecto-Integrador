@@ -112,6 +112,10 @@ class PeliculasP extends Component {
                 <Card
                   key={pelicula.id}
                   pelicula={pelicula}
+                  id={pelicula.id}
+                  poster_path={pelicula.poster_path}
+                  title={pelicula.title}
+                  overview={pelicula.overview}
 
                 />)
               ))

@@ -60,6 +60,10 @@ class SeriesP extends Component {
                     <CardS
                       key={serie.id}
                       serie={serie}
+                      id={serie.id}
+                      poster_path={serie.poster_path}
+                      name={serie.name}
+                      overview={serie.overview}
     
                     />)
                   ))
