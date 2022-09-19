@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Card from '../../components/card/Card';
 import './DetalleP.css'
 
 class DetallePelicula extends Component {
