@@ -68,9 +68,9 @@ class Home extends Component {
       .catch(err => console.log(err))
   }
 
-  filtrarPersonajes(filtro) {
-    const peliculasPo = `https://api.themoviedb.org/3/search/multi?api_key=cd97ce54561a25ea3bbdfae70457a394&language=es&query=${filtro}`
-    fetch(peliculasPo)
+  filtrarPeliculas(filtro) {
+    const peliculasF = `https://api.themoviedb.org/3/search/multi?api_key=cd97ce54561a25ea3bbdfae70457a394&language=es&query=${filtro}`
+    fetch(peliculasF)
       .then((res) => res.json())
       .then(datos => {
         console.log(datos)
@@ -84,14 +84,15 @@ class Home extends Component {
   handleChage(e) {
     this.setState({
       filterBy: e.target.value
-    }, () => {
-      this.filtrarPersonajes(this.state.filterBy)
+    }, 
+    () => {
+      this.filtrarPeliculas(this.state.filterBy)
     })
   }
 
   handleSubmit(e) {
     e.preventDefault()
-    console.log(this.state.nombre)
+    console.log(this.state.filterBy)
 
 
   }
@@ -129,7 +130,7 @@ class Home extends Component {
 
           </form>
         </div>
-        {this.state.filterBy <= "0" ?
+        {this.state.filterBy <= "" ?
           <>
             <div className="titulo">
               <h2>• LO MÁS VISTO EN PELÍCULAS •</h2>
