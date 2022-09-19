@@ -9,7 +9,6 @@ class DetalleSerie extends Component {
             id: this.props.match.params.id,
             detail: {},
             serie: [],
-            favoritos: [],
             genero: ""
         }
     }
@@ -48,7 +47,6 @@ class DetalleSerie extends Component {
                         <strong>Fecha de estreno:</strong> <p>{this.state.detail.first_air_date}</p>
                         <strong>Sinópsis:</strong> <p>{this.state.detail.overview}</p>
                         <strong>Género:</strong> <p>{this.state.genero}</p>
-                        <button onClick={() => console.log("Favoritos")}>Favoritos</button>
                         </div>
                     </div>
                 </div>
