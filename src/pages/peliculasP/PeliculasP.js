@@ -8,13 +8,14 @@ class PeliculasP extends Component {
     this.state = {
       cargando: true,
       popularesP: [],
-      favoritos: [],
       busqueda: [],
       filterBy: "",
-      mas: ""
+      mas: "",
+      favoritos: []
     };
     console.log(this.state.busqueda)
   }
+
   componentDidMount() {
 
     const popularesP = "https://api.themoviedb.org/3/movie/popular?api_key=fcb65972de75954111563f90b05f9fed"
@@ -24,15 +25,29 @@ class PeliculasP extends Component {
         console.log(datos)
         return this.setState({
           mas: datos.page,
-          popularesP: datos.results.slice(0,15)
+          popularesP: datos.results.slice(0, 15)
         })
       })
       .catch(err => console.log(err))
   }
 
+  handleFavoritos(card) {
+    if (this.state.favoritos.some(fav => card.id === fav.id)) {
+
+      this.setState({ favoritos: this.state.favoritos.filter(item => item.id !== card.id) }, () => {
+        localStorage.setItem('favoritos', JSON.stringify(this.state.favoritos))
+      })
+      console.log(this.state.favoritos.filter(item => item.id !== card.id))
+    } else {
+      this.setState({ favoritos: [...this.state.favoritos, card] }, () => {
+        localStorage.setItem('favoritos', JSON.stringify(this.state.favoritos))
+      })
+    }
+  }
+
   agregarMas() {
     // Logica para agregar mas personajes
-    const mas = `https://api.themoviedb.org/3/movie/popular?api_key=c0945689b0a582e110971301d6ea8be2&language=es&page=${this.state.mas+1}`;
+    const mas = `https://api.themoviedb.org/3/movie/popular?api_key=c0945689b0a582e110971301d6ea8be2&language=es&page=${this.state.mas + 1}`;
     fetch(mas)
       .then(res => res.json())
       .then(data => {
@@ -40,9 +55,9 @@ class PeliculasP extends Component {
           mas: data.page,
           popularesP: this.state.popularesP.concat(data.results)
         })
-    })
-          .catch(err => console.log(err))
-   
+      })
+      .catch(err => console.log(err))
+
 
   }
   filtrarPersonajes(filtro) {
@@ -73,31 +88,30 @@ class PeliculasP extends Component {
       this.filtrarPersonajes(this.state.filterBy)
     })
   }
+
   handleSubmit(e) {
     e.preventDefault()
     console.log(this.state.filterBy)
-
-
   }
+
   render() {
     return (
       <>
         <div className="busqueda" >
-        <form onSubmit={(e) => { this.handleSubmit(e) }}>
-          <label></label>
-          <input
+          <form onSubmit={(e) => { this.handleSubmit(e) }}>
+            <label></label>
+            <input
 
-            type="text"
-            name="nombre"
-            onChange={(e) => { this.handleChage(e) }}
-            value={this.setState.filterBy}
-            placeholder="Buscar peliculas  🔍"
-
-          />
-
+              type="text"
+              name="nombre"
+              onChange={(e) => { this.handleChage(e) }}
+              value={this.setState.filterBy}
+              placeholder="Buscar peliculas  🔍"
+            />
 
 
-        </form>
+
+          </form>
         </div>
         <div className="titulo">
           <h2>• LO MÁS VISTO EN PELÍCULAS •</h2>
@@ -118,6 +132,7 @@ class PeliculasP extends Component {
                   poster_path={pelicula.poster_path}
                   title={pelicula.title}
                   overview={pelicula.overview}
+                  favoritos={(fav) => this.handleFavoritos(fav)}
 
                 />)
               ))
@@ -131,4 +146,4 @@ class PeliculasP extends Component {
 
 }
 
-export default PeliculasP; 
+export default PeliculasP;

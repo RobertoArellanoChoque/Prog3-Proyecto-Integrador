@@ -17,9 +17,8 @@ class Home extends Component {
       valoradosS: [],
       busqueda: [],
       filterBy: "",
-      favoritos:[]
+      favoritos: []
     };
-
   }
 
   componentDidMount() {
@@ -84,37 +83,33 @@ class Home extends Component {
   handleChage(e) {
     this.setState({
       filterBy: e.target.value
-    }, 
-    () => {
-      this.filtrarPeliculas(this.state.filterBy)
-    })
+    },
+      () => {
+        this.filtrarPeliculas(this.state.filterBy)
+      })
   }
 
   handleSubmit(e) {
     e.preventDefault()
     console.log(this.state.filterBy)
-
-
   }
-  componentDidUpdate() {
 
+  handleFavoritos(card) {
+    if (this.state.favoritos.some(fav => card.id === fav.id)) {
+
+      this.setState({ favoritos: this.state.favoritos.filter(item => item.id !== card.id) }, () => {
+        localStorage.setItem('favoritos', JSON.stringify(this.state.favoritos))
+      })
+      console.log(this.state.favoritos.filter(item => item.id !== card.id))
+    } else {
+      this.setState({ favoritos: [...this.state.favoritos, card] }, () => {
+        localStorage.setItem('favoritos', JSON.stringify(this.state.favoritos))
+      })
+    }
   }
-  handleFavoritos(card){
-    if(this.state.favoritos.some(fav => card.id === fav.id)){
-  
-    this.setState({favoritos: this.state.favoritos.filter( item => item.id !== card.id)}, ()=>{
-      localStorage.setItem('favoritos', JSON.stringify(this.state.favoritos))
-    })
-    console.log(this.state.favoritos.filter( item => item.id !== card.id))
-    }else {
-      this.setState({favoritos: [...this.state.favoritos, card]}, ()=>{
-      localStorage.setItem('favoritos', JSON.stringify(this.state.favoritos))
-    })}}
 
   render() {
     return (
-
-
       <>
         <div className="busqueda" >
           <form onSubmit={(e) => { this.handleSubmit(e) }} >
@@ -126,16 +121,16 @@ class Home extends Component {
               value={this.state.filterBy}
               placeholder="Buscar peliculas o series 🔍"
             />
-
-
           </form>
         </div>
+
         {this.state.filterBy <= "" ?
           <>
             <div className="titulo">
               <h2>• LO MÁS VISTO EN PELÍCULAS •</h2>
               <Link className="verMas " aria-current="page" to="/peliculasP"> <button> VER TODAS</button> </Link>
             </div>
+
             <section className='contenedor'>
               {this.state.cargando === false ? (
                 <p>Cargando</p>
@@ -154,10 +149,12 @@ class Home extends Component {
               )
               }
             </section>
+
             <div className="titulo">
               <h2>• PELÍCULAS MÁS VALORADAS •</h2>
               <Link className="verMas " aria-current="page" to="/peliculasV"> <button> VER TODAS</button> </Link>
             </div>
+
             <section className='contenedor'>
               {this.state.cargando === false ? (
                 <p>Cargando</p>
@@ -177,11 +174,11 @@ class Home extends Component {
               }
             </section>
 
-
             <div className="titulo">
               <h2>• LO MÁS VISTO EN SERIES •</h2>
               <Link className="verMas " aria-current="page" to="/seriesP"> <button> VER TODAS</button> </Link>
             </div>
+
             <section className='contenedor'>
               {this.state.cargando === false ? (
                 <p>Cargando</p>
@@ -195,29 +192,30 @@ class Home extends Component {
                     name={serie.name}
                     overview={serie.overview}
                     favoritos={(fav) => this.handleFavoritos(fav)}
-                     />)
+                  />)
                 )
               )
               }
             </section>
+
             <div className="titulo">
-              <h2>• SERIES MÁS VALORADAS •</h2> 
+              <h2>• SERIES MÁS VALORADAS •</h2>
               <Link className="verMas " aria-current="page" to="/seriesV"> <button> VER TODAS</button> </Link>
-              
             </div>
+
             <section className='contenedor'>
               {this.state.cargando === false ? (
                 <p>Cargando</p>
               ) : (
                 this.state.valoradosS.map(serie => (
-                  <CardS 
-                  key={serie.id} 
-                  serie={serie} 
-                  id={serie.id}
-                  poster_path={serie.poster_path}
-                  name={serie.name}
-                  overview={serie.overview}
-                  favoritos={(fav) => this.handleFavoritos(fav)}
+                  <CardS
+                    key={serie.id}
+                    serie={serie}
+                    id={serie.id}
+                    poster_path={serie.poster_path}
+                    name={serie.name}
+                    overview={serie.overview}
+                    favoritos={(fav) => this.handleFavoritos(fav)}
                   />)
                 )
               )
