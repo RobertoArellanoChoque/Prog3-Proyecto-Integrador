@@ -1,0 +1,25 @@
+.titulo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #080f28;
+    color: white;
+  
+    margin-bottom: 2%;
+    padding: 20px;
+    text-align: left;
+    width: 100%;
+    
+  }
+  .contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+    padding: 60px 0;
+    margin-bottom: 2%;
+    background-color: #080f28;
+  
+  
+  }
+  

@@ -36,7 +36,11 @@ class Favorito extends Component {
         console.log(this.state.favoritos)
         return (
             <div>
-                {this.state.favoritos[0] === null ? <h2>No peliculas favoritas</h2>:
+                <div className="titulo">
+                     <h2>• FAVORITOS •</h2>
+                </div>
+                <section className='contenedor'>
+                {this.state.favoritos[0] === null ? <h2>NO HAY PELÍCULAS O SERIES EN FAVORITOS</h2>:
                 this.state.favoritos.map ( item =>(
                     <Card
                     
@@ -50,7 +54,7 @@ class Favorito extends Component {
                 ) )
                 
                 }
-               
+                </section>
             </div>
         )
     }

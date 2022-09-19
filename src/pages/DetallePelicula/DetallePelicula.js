@@ -45,11 +45,11 @@ class DetallePelicula extends Component {
                             <br></br>
                             <hr></hr>
                             <br></br>
-                            <strong>Rating:</strong> <p>{this.state.detail.vote_average}</p>
-                            <strong>Fecha de estreno:</strong> <p>{this.state.detail.release_date}</p>
-                            <strong>Duración:</strong> <p>{this.state.detail.runtime}</p>
-                            <strong>Sinópsis:</strong> <p>{this.state.detail.overview}</p>
-                            <strong>Género:</strong> <p>{this.state.genero}</p>
+                            <p>  Rating:{this.state.detail.vote_average}</p>
+                            <p> Fecha de estreno:{this.state.detail.release_date}</p>
+                            <p>   Duración:{this.state.detail.runtime}</p>
+                            <p>  Sinópsis:{this.state.detail.overview}</p>
+                            <p>  Género:{this.state.genero}</p>
                         </div>
                     </div>
                 </div>

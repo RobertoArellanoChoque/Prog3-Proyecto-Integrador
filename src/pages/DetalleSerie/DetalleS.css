@@ -16,6 +16,13 @@
     padding-top: 2%;
     text-align: center;
    }
+  .detalleP p{
+    color: white;
+    text-transform: uppercase;
+    padding: 1%;
+    font-weight: bolder;
+    margin: auto;
+  }
   .d-pelicula hr{
     color: white;
   }

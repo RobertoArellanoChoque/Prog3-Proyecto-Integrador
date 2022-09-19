@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Card from '../../components/card/Card';
-
+import './PeliculasP.css'
 
 class PeliculasP extends Component {
   constructor() {
@@ -82,6 +82,7 @@ class PeliculasP extends Component {
   render() {
     return (
       <>
+        <div className="busqueda" >
         <form onSubmit={(e) => { this.handleSubmit(e) }}>
           <label></label>
           <input
@@ -90,20 +91,21 @@ class PeliculasP extends Component {
             name="nombre"
             onChange={(e) => { this.handleChage(e) }}
             value={this.setState.filterBy}
-
+            placeholder="Buscar peliculas  🔍"
 
           />
 
 
 
         </form>
+        </div>
         <div className="titulo">
           <h2>• LO MÁS VISTO EN PELÍCULAS •</h2>
-          <button className="verMas" onClick={() => this.agregarMas()}>Más películas</button>
+          <button className="verMas" onClick={() => this.agregarMas()}> VER MÁS PELÍCULAS</button>
 
         </div>
 
-        <div className='contenedor1'>
+        <div className='contenedor'>
           {
             this.state.cargando === false ? (
               <p>Cargando</p>
