@@ -2,20 +2,20 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 class CardB extends Component {
-  constructor(){
-super()
-this.state = {
-  verMas: true,
-}
+  constructor() {
+    super()
+    this.state = {
+      verMas: true,
+    }
 
   }
 
-  mostrarDetalle (){
+  mostrarDetalle() {
     this.setState({
       verMas: false,
     })
   }
-  ocultarDetalle(){
+  ocultarDetalle() {
     this.setState({
       verMas: true,
     })
@@ -44,23 +44,23 @@ this.state = {
                 <h3>{this.props.name}</h3>
               }
               {this.state.verMas === true ?
-              <>
-               <span className='info' id='hideText' >
-                <p  >{this.props.overview}</p>
-              </span>
-              <button><Link to={`/detallepelicula/id/${this.props.id}`}>Detalle</Link></button>
-              <button onClick={() => this.mostrarDetalle()} >Ver mas</button>
-              
-              </>
-            :
-            <>
-             <span className='info-show' id='hideText' >
-                <p  >{this.props.overview}</p>
-              </span>
-              <button><Link to={`/detallepelicula/id/${this.props.id}`}>Detalle</Link></button>
-              <button onClick={() => this.ocultarDetalle()} >Ver menos</button>
-            </>
-            }
+                <>
+                  <span className='info' id='hideText' >
+                    <p  >{this.props.overview}</p>
+                  </span>
+                  <button><Link to={`/detallepelicula/id/${this.props.id}`}>Detalle</Link></button>
+                  <button onClick={() => this.mostrarDetalle()} >Ver mas</button>
+
+                </>
+                :
+                <>
+                  <span className='info-show' id='hideText' >
+                    <p  >{this.props.overview}</p>
+                  </span>
+                  <button><Link to={`/detallepelicula/id/${this.props.id}`}>Detalle</Link></button>
+                  <button onClick={() => this.ocultarDetalle()} >Ver menos</button>
+                </>
+              }
 
             </>
           }
