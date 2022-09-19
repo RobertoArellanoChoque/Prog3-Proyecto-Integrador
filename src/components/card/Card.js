@@ -42,7 +42,7 @@ class Card extends Component {
                     <p  >{this.props.overview}</p>
                   </span>
                   <button><Link to={`/detallepelicula/id/${this.props.id}`}>Detalle</Link></button>
-                  <button onClick={() => this.mostrarDetalle()} >Ver mas</button>
+                  <button onClick={() => this.mostrarDetalle()} >Ver más</button>
 
                 </>
                 :
