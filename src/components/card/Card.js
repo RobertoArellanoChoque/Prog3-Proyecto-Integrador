@@ -22,6 +22,7 @@ class Card extends Component {
       verMas: false,
     })
   }
+
   ocultarDetalle() {
     this.setState({
       verMas: true,

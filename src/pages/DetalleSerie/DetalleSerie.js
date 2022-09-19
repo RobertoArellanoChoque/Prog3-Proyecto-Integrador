@@ -10,7 +10,7 @@ class DetalleSerie extends Component {
             detail: {},
             serie: [],
             favoritos: [],
-            genero:""
+            genero: ""
         }
     }
 
@@ -35,14 +35,22 @@ class DetalleSerie extends Component {
             <>
                 <div className="d-pelicula">
                     <h1>{this.state.detail.name}</h1>
-                    <div className="foto-pelicula-popular">
-                        <img src={`https://image.tmdb.org/t/p/original${this.state.detail.poster_path}`} alt={this.state.detail.title} />
+                    <div className="contain">
+
+                        <div className="foto-pelicula-popular">
+                            <img src={`https://image.tmdb.org/t/p/original${this.state.detail.poster_path}`} alt={this.state.detail.title} />
+                        </div>
+                        <div className="detalleP">
+                        <br></br>
+                        <hr></hr>
+                        <br></br>
+                        <strong>Rating:</strong> <p>{this.state.detail.vote_average}</p>
+                        <strong>Fecha de estreno:</strong> <p>{this.state.detail.first_air_date}</p>
+                        <strong>Sinópsis:</strong> <p>{this.state.detail.overview}</p>
+                        <strong>Género:</strong> <p>{this.state.genero}</p>
+                        <button onClick={() => console.log("Favoritos")}>Favoritos</button>
+                        </div>
                     </div>
-                    <strong>Rating:</strong> <p>{this.state.detail.vote_average}</p>
-                    <strong>Fecha de estreno:</strong> <p>{this.state.detail.first_air_date}</p>
-                    <strong>Sinópsis:</strong> <p>{this.state.detail.overview}</p>
-                    <strong>Género:</strong> <p>{this.state.genero}</p>
-                    <button onClick={() => console.log("Favoritos")}>Favoritos</button>
                 </div>
             </>
         )
