@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Card from '../../components/card/Card';
-import CardS from '../../components/card/cardS';
+import CardS from '../../components/card/CardS';
 import CardB from '../../components/card/CardB';
 import { Link } from 'react-router-dom';
 import './Home.css'
@@ -23,7 +23,6 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.setState({})
     const popularesP = "https://api.themoviedb.org/3/movie/popular?api_key=fcb65972de75954111563f90b05f9fed"
     fetch(popularesP)
       .then((res) => res.json())
@@ -170,6 +169,7 @@ class Home extends Component {
                     poster_path={pelicula.poster_path}
                     title={pelicula.title}
                     overview={pelicula.overview}
+                    favoritos={(fav) => this.handleFavoritos(fav)}
                   />)
                 )
               )
@@ -193,6 +193,7 @@ class Home extends Component {
                     poster_path={serie.poster_path}
                     name={serie.name}
                     overview={serie.overview}
+                    favoritos={(fav) => this.handleFavoritos(fav)}
                      />)
                 )
               )
@@ -215,6 +216,7 @@ class Home extends Component {
                   poster_path={serie.poster_path}
                   name={serie.name}
                   overview={serie.overview}
+                  favoritos={(fav) => this.handleFavoritos(fav)}
                   />)
                 )
               )
